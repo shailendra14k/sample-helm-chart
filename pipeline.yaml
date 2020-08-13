@@ -1,0 +1,20 @@
+
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: shailendra
+  namespace: cicd
+spec:
+  successfulBuildsHistoryLimit: 5
+  failedBuildsHistoryLimit: 5
+  strategy:
+    type: JenkinsPipeline
+    jenkinsPipelineStrategy:
+      jenkinsfilePath: Jenkinsfile
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/shailendra14k/sample-helm-chart.git'
+      ref: master
+  triggers: []
+  runPolicy: Serial
