@@ -1,4 +1,4 @@
-def repo="https://shailendra14k.github.io/sample-helm-chart/"
+def repo="http://httpd-httpd.apps.shsingh.3ca3.sandbox88.opentlc.com"
 pipeline{
 		agent{
 				label 'helm'
@@ -16,7 +16,7 @@ pipeline{
                 script{
 										openshift.withCluster(){
                        
-                            sh "helm upgrade --install my-guestbook shailendra/guestbook --values dev/values.yaml -n dev --wait"
+                            sh "helm upgrade --install my-guestbook shailendra/sample-app --values dev/values.yaml -n dev --wait"
                         
                     }
                 }
