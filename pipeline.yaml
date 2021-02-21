@@ -1,4 +1,4 @@
-
+##Deprecated
 kind: BuildConfig
 apiVersion: build.openshift.io/v1
 metadata:
