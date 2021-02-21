@@ -14,7 +14,7 @@ pipeline{
                         steps {
                             script{
 					openshift.withCluster(){
-                                        sh "helm upgrade --install my-guestbook shailendra/sample-app --values dev/values.yaml -n dev --wait"
+                                        sh "helm upgrade --install helm-app shailendra/sample-app --values dev/values.yaml -n dev --wait"
                                     }
                                 }
                             }
@@ -23,7 +23,7 @@ pipeline{
                         steps {
                             script{
 					openshift.withCluster(){
-                                        sh "helm upgrade --install my-guestbook shailendra/sample-app --values uat/values.yaml -n uat --wait"
+                                        sh "helm upgrade --install helm-app shailendra/sample-app --values uat/values.yaml -n uat --wait"
                                     }
                                 }
                             }
